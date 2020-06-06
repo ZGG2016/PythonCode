@@ -30,7 +30,7 @@ def tiebaSpider(url,startPage,endPage):
         response = request.urlopen(req)
         html = response.read().decode()
 
-        file = "C://Users//zgg//Desktop//PythonCode//learn//python爬虫【传智播客】//out//page %s.txt" % str(page)
+        file = "out//page %s.txt" % str(page)
         writeData(html,file)
 
 
