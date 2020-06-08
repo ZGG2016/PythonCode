@@ -1,6 +1,8 @@
 from urllib import request
 import re
 
+# 关键在于正则怎么写，才能简化后面的数据处理
+
 class Spider:
     def __init__(self):
         # 初始化起始页位置
