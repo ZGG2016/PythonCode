@@ -3,6 +3,8 @@ from urllib import request,parse
 import requests
 from lxml import etree
 
+# 爬取贴吧图片
+
 def writeImage(link):
     """
     将html内容写入到本地
