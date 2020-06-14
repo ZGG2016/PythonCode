@@ -4,6 +4,7 @@ from lxml import etree
 import requests
 
 # 使用xpath爬取糗事百科段子
+# xpath  模糊查询
 
 url = "https://www.qiushibaike.com/text/page/1/"
 
