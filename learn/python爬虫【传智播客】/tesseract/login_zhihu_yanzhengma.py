@@ -2,7 +2,7 @@
 # import time
 # import pytesseract
 # from PIL import Image
-# from bs4 import BeautifulSoup
+# from beautifulsoup4 import BeautifulSoup
 #
 # def captcha(data):
 #     with open('captcha.jpg','wb') as fp:
