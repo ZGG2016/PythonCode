@@ -3,6 +3,7 @@ import os
 
 import scrapy
 from spider_scrapy_sina.items import SpiderScrapySinaItem
+
 # 注意掌握爬取逻辑
 class SinaSpider(scrapy.Spider):
     name = 'sina'
