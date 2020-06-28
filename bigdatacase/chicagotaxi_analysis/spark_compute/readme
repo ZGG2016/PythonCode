@@ -1,0 +1,9 @@
+
+predict_price:
+1.原数据集划分成测试集和训练集。
+2.使用MinMaxScaler归一化训练集，转成LabeledPoint格式
+3.使用LinearRegressionWithSGD线性回归模型拟合数据，使用测试集预测。
+4.使用均方误差评估模型
+
+passenger_hot_spots:
+spark处理数据--->hdfs存储数据--->sqoop传输数据--->mysql存储数据--->django展示数据
