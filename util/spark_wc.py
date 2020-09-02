@@ -6,7 +6,7 @@ from pyspark import SparkContext, SparkConf
 
 def main(flag):
     global data
-    conf = SparkConf().setMaster("spark://zgg:7077").setAppName("wordcount")
+    conf = SparkConf().setMaster().setAppName("wordcount")
     sc = SparkContext(conf=conf)
 
     # data = sc.parallelize(["a,b","b,c"])
@@ -41,14 +41,8 @@ if __name__=="__main__":
     main(flag)
 
 """
-集群运行：
-spark-submit spark_wc.py 
-    --master yarn-cluster \
-    --queue mid \
-    --num-executors $NUM_EXECUTORS \
-    --driver-memory $DRIVER_MEMORY \
-    --executor-memory $EXECUTOR_MEMORY \
-    --executor-cores $EXECUTOR_CORES \
+standalone 集群运行：
+spark-submit spark_wc.py --master spark://zgg:7077 [flag]
 
 ---------------------------------------------
 

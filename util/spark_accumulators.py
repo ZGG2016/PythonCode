@@ -23,13 +23,9 @@ def update_counter(counter, path):
     else:
         counter.add({path: 1})
 
-def main(flag):
+def main():
 
-    global sc
-    if flag=='0':
-        sc = SparkContext("spark://zgg:7077", "accumulators")
-    elif flag=='1':
-        sc = SparkContext("local", "accumulators")
+    sc = SparkContext()
 
     g_counter = sc.accumulator({"a": 1, "b": 1}, SparkCounter())
 
@@ -43,18 +39,17 @@ def main(flag):
 
 
 if __name__=="__main__":
-    if len(sys.argv) != 2:
-        print("input params,please")
 
-    """"
-     0：集群模式
-     1：本地模式
-     
+
+    """"   
+     standalone 集群运行：
+        spark-submit spark_accumulators.py --master spark://zgg:7077
+     本地运行：
+        spark-submit spark_accumulators.py --master local 
+    
      结果：{'a': 6, 'b': 6}
     """
-
-    flag = sys.argv[1]
-    main(flag)
+    main()
 
 """
 AccumulatorParam 自定义一个累加器要继承的类
