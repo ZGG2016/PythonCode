@@ -24,9 +24,7 @@ def update_counter(counter, path):
         counter.add({path: 1})
 
 def main():
-
     sc = SparkContext()
-
     g_counter = sc.accumulator({"a": 1, "b": 1}, SparkCounter())
 
     for i in range(0,10):
@@ -39,8 +37,6 @@ def main():
 
 
 if __name__=="__main__":
-
-
     """"   
      standalone 集群运行：
         spark-submit spark_accumulators.py --master spark://zgg:7077
@@ -50,6 +46,7 @@ if __name__=="__main__":
      结果：{'a': 6, 'b': 6}
     """
     main()
+
 
 """
 AccumulatorParam 自定义一个累加器要继承的类
