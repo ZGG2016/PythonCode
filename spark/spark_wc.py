@@ -6,7 +6,7 @@ from pyspark import SparkContext, SparkConf
 
 def main(flag):
     global data
-    conf = SparkConf().setMaster().setAppName("wordcount")
+    conf = SparkConf().setMaster("local").setAppName("wordcount")
     sc = SparkContext(conf=conf)
 
     # data = sc.parallelize(["a,b","b,c"])
