@@ -5,15 +5,17 @@ from pyspark import SparkContext
 from pyspark.streaming import StreamingContext
 
 """
-To run this on your local machine, you need to first run a Netcat server
-    `$ nc -lk 9999`
- and then run the example
-    `$ bin/spark-submit examples/src/main/python/streaming/network_wordcount.py localhost 9999`
+从socket中读数据
+
+执行过程：
+  (1)运行 nc -lk 9999
+  (2)执行脚本 spark-submit network_wc.py localhost 9999 >out.log
+  (3)out.log 中查看结果
 """
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: network_wordcount.py <hostname> <port>", file=sys.stderr)
+        print("Usage: network_wc.py <hostname> <port>", file=sys.stderr)
         sys.exit(-1)
 
     sc = SparkContext(appName="PythonStreamingNetworkWordCount")

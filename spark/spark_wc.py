@@ -13,12 +13,12 @@ def main(flag):
 
     # 从hdfs读取文件  hdfs://localhost:9000/user/hadoop/word.txt
     if flag=='0':
-        data = sc.textFile("hdfs://zgg:9000/in/wc.txt")
-        #data = sc.textFile("/in/wc.txt")
+        data = sc.textFile("hdfs://zgg:9000/in/datasource.txt")
+        #data = sc.textFile("/in/datasource.txt")
 
     # 从本地读取文件 --- 绝对路径
     elif flag=='1':
-        data = sc.textFile("file:///root/data/wc.txt")
+        data = sc.textFile("file:///root/data/datasource.txt")
 
     rdd = data.flatMap(lambda x:x.split(" ")).map(lambda x:(x,1)).reduceByKey(add)
 
